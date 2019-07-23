@@ -1,3 +1,4 @@
+
 <template>
     <div id="app">
         <navbar />
@@ -9,22 +10,22 @@
 </template>
 
 <script>
-    import Navbar from "@/components/Navbar"
-    import IntroText from "@/pages/Home/IntroText"
-    import PhotoGallery from "@/pages/Home/PhotoGallery"
-    import VideoGallery from "@/pages/Home/VideoGallery"
-    import BottomNav from "@/components/BottomNav"
+import Navbar from '@/components/Navbar'
+import IntroText from '@/pages/Home/IntroText'
+import PhotoGallery from '@/pages/Home/PhotoGallery'
+import VideoGallery from '@/pages/Home/VideoGallery'
+import BottomNav from '@/components/BottomNav'
 
-    export default {
-        name: 'app',
-        components: {
-            PhotoGallery,
-            Navbar,
-            IntroText,
-            VideoGallery,
-            BottomNav
-        }
-    }
+export default {
+  name: 'Home',
+  components: {
+    PhotoGallery,
+    Navbar,
+    IntroText,
+    VideoGallery,
+    BottomNav
+  }
+}
 </script>
 
 <style>

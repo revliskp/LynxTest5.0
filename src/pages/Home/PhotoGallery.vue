@@ -1,27 +1,29 @@
 <template>
     <div id="app">
         <div id="gallery-container">
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
-            <img alt="Photo of a cat" class="pic" :src="cat"/>
+            <img alt="Photo of a cat" class="image" v-for="cat in images" :src="cat.image" :key="cat"/>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "PhotoGallery",
-        data: function() {
-            return {
-                cat: require('@/assets/cat.jpg')
-            }
-        }
+export default {
+  name: 'PhotoGallery',
+  data: function () {
+    return {
+      images: [
+        {image: require('@/assets/cat1.jpg')},
+        {image: require('@/assets/cat2.jpg')},
+        {image: require('@/assets/cat3.jpg')},
+        {image: require('@/assets/cat4.jpg')},
+        {image: require('@/assets/cat5.jpg')},
+        {image: require('@/assets/cat6.jpg')},
+        {image: require('@/assets/cat7.jpg')},
+        {image: require('@/assets/cat8.jpg')}
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>
@@ -43,7 +45,7 @@
         width: 60%;
         height: auto;
     }
-    .pic {
+    .image {
         box-sizing: content-box;
         width: 150px;
         height: 150px;

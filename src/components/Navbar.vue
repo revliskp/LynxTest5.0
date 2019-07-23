@@ -8,24 +8,49 @@
         </div>
         <div class="nav-buttons">
             <nav>
-                <button class="nav-button" id="nav-home">Home</button>
-                <button class="nav-button" id="nav-login">Sign in</button>
-                <button class="nav-button" id="nav-register">Sign up</button>
-                <button class="nav-button" id="nav-userlist">Users</button>
+              <div>
+                <nav>
+                  <router-link tag="button" class="nav-button" v-for="routes in links"
+                               :key="routes.id"
+                               :to="`${routes.page}`">{{routes.text}}</router-link>
+                </nav>
+              </div>
             </nav>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Navbar",
-        data: function() {
-            return {
-                logo: require('@/assets/logo.png')
-            }
+export default {
+  name: 'Navbar',
+  data: function () {
+    return {
+      logo: require('@/assets/logo.png'),
+      links: [
+        {
+          id: 0,
+          text: 'Home',
+          page: '/'
         },
+        {
+          id: 1,
+          text: 'Log in',
+          page: '/login'
+        },
+        {
+          id: 2,
+          text: 'Register',
+          page: '/register'
+        },
+        {
+          id: 3,
+          text: 'Userlist',
+          page: '/userlist'
+        }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>

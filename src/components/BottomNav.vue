@@ -1,16 +1,43 @@
 <template>
     <div id="app">
-        <button class="footer-button" id="footer-home">Home</button>
-        <button class="footer-button" id="footer-login">Sign in</button>
-        <button class="footer-button" id="footer-register">Sign up</button>
-        <button class="footer-button" id="footer-userlist">Users</button>
+      <nav>
+        <router-link tag="button" class="footer-button" v-for="routes in links"
+                     :key="routes.id"
+                     :to="`${routes.page}`">{{routes.text}}</router-link>
+      </nav>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "BottomNav"
+export default {
+  name: 'BottomNav',
+  data: function () {
+    return {
+      links: [
+        {
+          id: 0,
+          text: 'Home',
+          page: '/'
+        },
+        {
+          id: 1,
+          text: 'Log in',
+          page: '/login'
+        },
+        {
+          id: 2,
+          text: 'Register',
+          page: '/register'
+        },
+        {
+          id: 3,
+          text: 'Userlist',
+          page: '/userlist'
+        }
+      ]
     }
+  }
+}
 </script>
 
 <style scoped>
