@@ -58,8 +58,7 @@ export default {
       user: {
         name: '',
         email: '',
-        password: '',
-        creationDate: ''
+        password: ''
       }
     }
   },
@@ -78,12 +77,7 @@ export default {
       this.user = {
         name: '',
         email: '',
-        password: '',
-        creationDate: function () {
-          const now = new Date()
-          const date = this.user.creationDate = now.toLocaleDateString()
-          return date
-        }
+        password: ''
       }
       this.error = false
       this.success = true

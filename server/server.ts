@@ -3,7 +3,7 @@ import {qaRouter} from 'routes/qa-routes';
 import {userRouter} from 'routes/user-routes';
 import * as bodyParser from 'koa-bodyparser';
 
-var app = require('./app');
+const app = require('./app');
 
 const bootstrap = async () => {
 

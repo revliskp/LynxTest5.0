@@ -15,7 +15,7 @@ const webpack = require('webpack');
  */
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 /*
  * We've enabled HtmlWebpackPlugin for you! This generates a html
  * page for you when you compile webpack, which will make you start
@@ -33,7 +33,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist')
 	},
 
-	plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin()],
+	plugins: [new webpack.ProgressPlugin(), new HtmlWebpackPlugin(), new VueLoaderPlugin()],
 
 	module: {
 		rules: [
@@ -54,7 +54,18 @@ module.exports = {
 						]
 					]
 				}
-			}
+			},
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      }
 		]
 	},
 

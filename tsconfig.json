@@ -12,7 +12,11 @@
       "node"
     ],
     "sourceMap": true,
-    "baseUrl": "./server"
+    "baseUrl": "./server",
+    "paths" : {
+      "user" : ["src/pages/Register/RegisterContainer"],
+      "server" : ["./server"]
+    }
   },
   "exclude": [
     "node_modules",

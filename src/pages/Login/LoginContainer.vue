@@ -8,7 +8,7 @@
                 <label for="password-field">Password</label>
                 <input v-model="user.password" id="password-field" type="text" />
                 <div id="buttons">
-                  <button id="submit-button">Add Employee</button>
+                  <button id="submit-button">Submit</button>
                   <!-- <router-link to="/submission"
                                id="submit-button"
                                tag="button">Submit</router-link> -->
@@ -74,6 +74,13 @@ export default {
       margin-left: 15%;
       margin-top: 5%;
       margin-bottom: 2%;
+    }
+    input {
+      margin-left: 15%;
+      min-width: 70%;
+      border-radius: 5px;
+      border: 1px solid #D3D3D3;
+      height: 3vh;
     }
     #email-field{
       margin-left: 15%;
